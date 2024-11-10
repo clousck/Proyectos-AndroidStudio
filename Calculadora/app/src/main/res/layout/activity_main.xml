@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#f2f2f2">
+
+    <!-- Título de la calculadora -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculadora Binaria"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#333"
+        android:layout_marginBottom="24dp"
+        android:gravity="center" />
+
+    <!-- Primer número binario -->
+    <EditText
+        android:id="@+id/etFirstNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número Binario 1"
+        android:inputType="textCapCharacters|textNoSuggestions"
+        android:maxLength="32"
+        android:textSize="40sp"
+        android:textColor="#333"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:importantForAccessibility="yes" />
+
+    <!-- Segundo número binario -->
+    <EditText
+        android:id="@+id/etSecondNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número Binario 2"
+        android:inputType="textCapCharacters|textNoSuggestions"
+        android:maxLength="32"
+        android:textSize="40sp"
+        android:textColor="#333"
+        android:layout_marginBottom="24dp"
+        android:padding="12dp"
+        android:importantForAccessibility="yes" />
+
+    <!-- Operaciones -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:rowCount="1"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Botón de Suma -->
+        <Button
+            android:id="@+id/btnSum"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="+"
+            android:onClick="Add"
+            android:textSize="25sp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#fff"
+            android:padding="16dp"
+            android:layout_margin="4dp" />
+
+        <!-- Botón de Resta -->
+        <Button
+            android:id="@+id/btnSubtract"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="-"
+            android:onClick="Substarct"
+            android:textSize="25sp"
+            android:backgroundTint="#FF9800"
+            android:textColor="#fff"
+            android:padding="16dp"
+            android:layout_margin="4dp" />
+
+        <!-- Botón de Multiplicación -->
+        <Button
+            android:id="@+id/btnMultiply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="*"
+            android:onClick="Multiply"
+            android:textSize="25sp"
+            android:backgroundTint="#3F51B5"
+            android:textColor="#fff"
+            android:padding="16dp"
+            android:layout_margin="4dp" />
+
+        <!-- Botón de División -->
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="/"
+            android:onClick="Divide"
+            android:textSize="25sp"
+            android:backgroundTint="#FF5722"
+            android:textColor="#fff"
+            android:padding="16dp"
+            android:layout_margin="4dp" />
+    </GridLayout>
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultado: "
+        android:textSize="28sp"
+        android:textColor="#333"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <!-- Botón para borrar todo -->
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#E91E63"
+        android:padding="16dp"
+        android:text="Borrar"
+        android:onClick="Clear"
+        android:textColor="#fff"
+        android:textSize="18sp" />
+
+</LinearLayout>
