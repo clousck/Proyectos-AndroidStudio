@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AutorActivity">
+
+    <!-- Campo para Id (solo lectura o auto-generado) -->
+    <EditText
+        android:id="@+id/etId"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:enabled="true"
+        android:hint="ID"
+        android:inputType="number"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Campo para Nombres -->
+    <EditText
+        android:id="@+id/etNombres"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Nombres"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etId" />
+
+    <!-- Campo para Apellidos -->
+    <EditText
+        android:id="@+id/etApellidos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Apellidos"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNombres" />
+
+    <!-- Campo para IsoPais -->
+    <EditText
+        android:id="@+id/etIsoPais"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="ISO País"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etApellidos" />
+
+    <!-- Campo para Edad -->
+    <EditText
+        android:id="@+id/etEdad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Edad"
+        android:inputType="number"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etIsoPais" />
+
+    <!-- Botones alineados horizontalmente y redondeados -->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etEdad">
+
+        <!-- Botón Crear -->
+        <Button
+            android:id="@+id/btnCrear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:onClick="CrearAutor"
+            android:padding="12dp"
+            android:text="Crear"
+            android:textColor="#FFFFFF" />
+
+        <!-- Botón Leer -->
+        <Button
+            android:id="@+id/btnLeer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:onClick="LeerAutor"
+            android:padding="12dp"
+            android:text="Leer"
+            android:textColor="#FFFFFF" />
+
+        <!-- Botón Actualizar -->
+        <Button
+            android:id="@+id/btnActualizar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:onClick="ActualizarAutor"
+            android:padding="12dp"
+            android:text="Actualizar"
+            android:textColor="#FFFFFF" />
+
+        <!-- Botón Eliminar -->
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:onClick="EliminarAutor"
+            android:padding="12dp"
+            android:text="Eliminar"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <!-- TableLayout para mostrar los libros del autor -->
+    <TableLayout
+        android:id="@+id/tblLibrosAutor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:stretchColumns="1"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="1.0">
+
+        <!-- Encabezado de la tabla -->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:id="@+id/vId"
+                android:text="ID"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:id="@+id/vTittle"
+                android:text="Título"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:id="@+id/vYear"
+                android:text="Año"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Regresar"
+        android:onClick="RegresarActivity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
